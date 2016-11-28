@@ -25,7 +25,8 @@ private Button button;
         button= (Button) findViewById(R.id.button);
         editText= (EditText) findViewById(R.id.editText2);
         IntentFilter intentFilter=new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        registerReceiver(null,intentFilter);
+        Receiver receiver=new Receiver();
+        registerReceiver(receiver,intentFilter);
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
